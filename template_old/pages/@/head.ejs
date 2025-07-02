@@ -1,0 +1,50 @@
+<%- await include('@/meta') %>
+
+<%
+const maintenance = _.cms('maintenance') || {}
+if (maintenance.active) {
+  // redirect to maintenance page
+  %>
+  <script>
+    var unlockKey
+    <% if (maintenance.unlock_key) { %>
+      unlockKey = '<%= maintenance.unlock_key %>'
+      if (location.hash === '#' + unlockKey) {
+        sessionStorage.setItem('unlockKey', unlockKey)
+      }
+    <% } %>
+    if (!location.pathname.startsWith('/maintenance/') && sessionStorage.getItem('unlockKey') !== unlockKey) {
+      location.href = '/maintenance/'
+    }
+  </script>
+  <%
+}
+%>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js').then(registration => {
+      console.log('SW registered: ', registration)
+    }).catch(registrationError => {
+      console.log('SW registration failed: ', registrationError)
+    })
+  }
+</script>
+<link rel="stylesheet" type="text/css" href="<%= _.assetsPrefix || '' %>/storefront.css">
+
+<%
+// inject custom code
+const customCode = _.cms('code') || {}
+if (customCode.css) {
+  %>
+  <style>
+    <%- customCode.css %>
+  </style>
+  <%
+}
+%>
+<%- customCode.html_head %>
+
+<!-- Elfsight Spinning Wheel | Untitled Spinning Wheel -->
+<script src="https://static.elfsight.com/platform/platform.js" async></script>
+<div class="elfsight-app-9f578de6-c9fb-40ac-81f2-53f2839c85a5" data-elfsight-app-lazy></div>

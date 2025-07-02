@@ -1,7 +1,7 @@
 {
   "domain": "www.festfood.com.br",
   "currency_symbol": "R$",
-  "primary_color": "#831e5a",
+  "primary_color": "#ef4123",
   "theme": {
     "bootswatch": "_",
     "custom": "_"
@@ -17,7 +17,7 @@
   "favicon": "/img/uploads/e677be7c9e.png",
   "icons_font": "line-awesome",
   "country_code": "BR",
-  "secondary_color": "#EF5383",
+  "secondary_color": "#891400",
   "icon": "/img/uploads/logo-festcakes.png",
   "store_id": 51491,
   "description": "festfood.",
