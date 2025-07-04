@@ -118,6 +118,37 @@ export default options => {
                   }                          
               ]
           },
+          {
+              name: "header_colors",
+              label: "Cabeçalho",
+              file: "content/apx_header_colors.json",
+              editor: {
+                  preview: false
+              },
+              fields: [
+                  {
+                      label: "Cor do Fundo",
+                      name: "bg_color",
+                      widget: "color",
+                      required: false,
+                      hint: "Selecione a cor de fundo do cabeçalho"
+                  },
+                  {
+                      label: "Cor dos Textos",
+                      name: "text_color",
+                      widget: "color",
+                      required: false,
+                      hint: "Selecione a cor dos textos do cabeçalho"
+                  },
+                  {
+                      label: "Cor do Menu",
+                      name: "menu_color",
+                      widget: "color",
+                      required: false,
+                      hint: "Selecione a cor do menu de navegação"
+                  }
+              ]
+          },
         ]
       }        
     ]
