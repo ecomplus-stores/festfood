@@ -1398,7 +1398,7 @@ header.header-type-stc{z-index:9999}
   }
 
   .banner-image-product.style-abs.type-abs-2 img{min-height: unset;}
-  .tf-footer .logo-site img{height: 60px;max-width:138px;width: 138px;}
+  .tf-footer .logo-site img{height: 60px;max-width:100%;width: fit-content;}
 
   @media(max-width:990px){
     .product-item-mosaic .card-product>section{
@@ -1471,7 +1471,7 @@ header.header-type-stc{z-index:9999}
 .tf-sw-iconbox *:hover{text-decoration: none;}
 
 :root{
-  
+
   --gray:#333e48
 }
 
@@ -1491,4 +1491,13 @@ header.header-type-stc{z-index:9999}
 }
 .nowrap{ 
   white-space: nowrap;
+}
+
+@media(min-width:990px){
+  .form-search-product.style-3{max-width: 90%;}
+}
+
+header *,
+header *:hover{
+  text-decoration: none;
 }

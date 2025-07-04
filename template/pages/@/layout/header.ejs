@@ -1,8 +1,13 @@
 <%
-// load header options and contacts from content
 const header = _.cms('header') || {}
+const apx_header_color = _.cms('apx_header_colors') || {}
 const contacts = _.cms('contacts') || {}
 const themeCustom = _.settings.theme.custom || ''
+
+// Extract colors with fallbacks
+const bgColor = apx_header_color.bg_color || '#f8f9fa'
+const textColor = apx_header_color.text_color || '#333333'
+const menuColor = apx_header_color.menu_color || '#ffffff'
 
 // social networks handled by contacts
 const networks = [
@@ -48,10 +53,111 @@ if (header.marketing_stripe && !Array.isArray(header.marketing_stripe)) {
 }
 %>
 
+<!-- Custom Header Colors -->
+<style>
+  :root {
+    --header-bg-color: <%= bgColor %>;
+    --header-text-color: <%= textColor %>;
+    --header-menu-color: <%= menuColor %>;
+  }
+  .header-right *,
+  .header-right *:hover{text-decoration: none;}
+  .tf-header,
+  .tf-header .header-bt-left {
+    background-color: var(--header-bg-color) !important;
+  }
+  
+  .tf-header .header-top {
+    background-color: var(--header-bg-color);
+  }
+  
+  .tf-header .inner-header {
+    background-color: var(--header-bg-color);
+  }
+  
+  .tf-header .header-bottom {
+    background-color: var(--header-bg-color) !important;
+  }
+  
+  /* Text colors */
+  .tf-header .body-small,
+  .tf-header .text-main-2,
+  .tf-header .link,
+  .tf-header .nav-icon-item span,
+  .tf-header .nav-icon-item p,
+  .tf-header .nav-icon-item .body-text-3,
+  .tf-header .nav-icon-item .number-item {
+    color: var(--header-text-color) !important;
+  }
+  
+  .tf-header .text-white,
+  .tf-header .nav-icon-item.text-white,
+  .tf-header .nav-icon-item.text-white span,
+  .tf-header .nav-icon-item.text-white p {
+    color: var(--header-text-color) !important;
+  }
+  
+  /* Menu colors */
+  .tf-header .nav-category-wrap,
+  .tf-header .main-nav-menu,
+    .tf-header .nav-item .item-link,
+  .tf-header .category-menu .menu-item a,
+  .main-nav-menu.style-white-2 .item-link .icon {
+    color: var(--header-menu-color);
+  }
+  
+  .tf-header .nav-title
+ {
+    color: var(--header-text-color) !important;
+  }
+  
+  /* Icons */
+  .tf-header .icon-headphone,
+  .tf-header .icon-whatsapp,
+  .tf-header .icon-user-2,
+  
+  .tf-header .icon-hearth,
+  .tf-header .icon-cart,
+  .tf-header .icon-search {
+    color: var(--header-text-color) !important;
+  }
+  
+  /* SVG icons */
+  .tf-header svg path {
+    fill: var(--header-text-color) !important;
+    stroke: var(--header-text-color) !important;
+  }
+  
+  /* Count boxes */
+  .tf-header .count-box {
+    background-color: var(--header-text-color);
+    color: var(--header-bg-color);
+  }
+  
+  /* Links hover */
+  .tf-header .link:hover,
+  .tf-header .nav-icon-item:hover,
+  .tf-header .item-link:hover {
+    opacity: 0.8;
+  }
+  
+  /* Search form */
+  .tf-header .form-search-product {
+    border-color: var(--header-text-color);
+  }
+  
+  /* Mobile button */
+  .tf-header .mobile-button span,
+  .tf-header .mobile-button span:before,
+  .tf-header .mobile-button span:after {
+    background-color: var(--header-text-color) !important;
+  }
+</style>
+
 <div id="overlay" class="fade"></div>
 
 <!-- Header -->
-<header class="tf-header style-3 bg-gray" id="header">
+<header class="tf-header style-3" id="header">
   <!-- Top bar -->
   <% if (header.contacts_stripe && (header.contacts_stripe.pages || header.contacts_stripe.phone_wpp || header.contacts_stripe.socials)) { %>
     <div class="header-top pt-3  d-none d-md-block">
@@ -60,16 +166,16 @@ if (header.marketing_stripe && !Array.isArray(header.marketing_stripe)) {
           <div class="col-xl-6 col-12">
             <div class="topbar-left justify-content-xl-start">
               <% if (header.contacts_stripe.phone_wpp && contacts.phone) { %>
-                <p class="body-small text-main-2">
+                <p class="body-small text-main-2  m-0">
                   <i class="icon-headphone"></i>
-                  Call us for free:
+                  Atendimento:
                   <a href="tel:+<%= contacts.phone.replace(/\D/g, '') %>" class="text-primary link-secondary fw-semibold">
                     <%= contacts.phone %>
                   </a>
                 </p>
               <% } %>
               <% if (header.contacts_stripe.phone_wpp && contacts.whatsapp) { %>
-                <p class="body-small text-main-2">
+                <p class="body-small text-main-2  m-0">
                   <i class="icon-whatsapp"></i>
                   WhatsApp:
                   <a href="javascript:;" class="whatsapp-link text-primary link-secondary fw-semibold"
@@ -104,10 +210,10 @@ if (header.marketing_stripe && !Array.isArray(header.marketing_stripe)) {
     </div>
   <% } %>
   
-  <div class="inner-header">
+  <div class="inner-header py-md-4 my-md-2">
     <div class="container">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-7 d-flex align-items-center">
+      <div class="row align-items-center">
+        <div class="col-md-auto col-7 d-flex align-items-center">
           <div class="logo-site">
             <a href="/">
               <%- await include('@/layout/inc/logo', { _ }) %>
@@ -116,7 +222,7 @@ if (header.marketing_stripe && !Array.isArray(header.marketing_stripe)) {
         </div>
         
         <% if (header.search_input) { %>
-          <div class="col-xxl-7 col-md-8 d-none d-md-block">
+          <div class="col-md d-none d-md-block">
             <div class="header-center justify-content-end">
               <form class="form-search-product style-3 bg-white" id="search-form" action="/search" method="get">
               
@@ -139,16 +245,14 @@ if (header.marketing_stripe && !Array.isArray(header.marketing_stripe)) {
                   -->
                 </div>
               </form>
-              <p class="body-small text-main-2 d-none d-xl-block">
-                Popular search: Ps5 digital edition, fashion sale, macbook m1 pro, zenfone 3 max
-              </p>
+              
             </div>
           </div>
         <% } %>
         
-        <div class="col-xxl-3 col-md-2 col-5 d-flex align-items-center justify-content-end">
+        <div class="col-md-auto col-5 d-flex align-items-center justify-content-end">
           <div class="header-right">
-            <ul class="nav-icon style-3">
+            <ul class="nav-icon style-3 m-0">
               <li class="d-none d-xl-block">
                 <a href="/app/#/account/" class="nav-icon-item">
                   <span class="icon position-relative">
@@ -183,7 +287,7 @@ if (header.marketing_stripe && !Array.isArray(header.marketing_stripe)) {
                       <path d="M10.9999 0.5C8.22767 0.5 5.97119 2.75557 5.97119 5.52866C5.97119 8.30174 8.22771 10.5573 10.9999 10.5573C13.772 10.5573 16.0285 8.30174 16.0285 5.52866C16.0285 2.75557 13.772 0.5 10.9999 0.5ZM10.9999 9.64303C8.73146 9.64303 6.88548 7.79705 6.88548 5.52866C6.88548 3.26027 8.73146 1.41429 10.9999 1.41429C13.2682 1.41429 15.1142 3.26027 15.1142 5.52866C15.1142 7.79705 13.2682 9.64303 10.9999 9.64303Z" fill="#ffffff" stroke="#ffffff" stroke-width="0.3"></path>
                     </svg>
                   </span>
-                  <p class="body-small">
+                  <p class="body-small m-0">
                     <%= _.dictionary('signIn') || 'Sign in' %>
                   </p>
                 </a>
@@ -228,101 +332,92 @@ if (header.marketing_stripe && !Array.isArray(header.marketing_stripe)) {
     </div>
   </div>
   
-  <% if (categories && categories.length || hasAllDepartments) { %>
-    <div class="header-bottom bg-gray d-none d-xl-block">
-      <div class="container">
-        <div class="header-bt-left active-container bg-gray relative">
-          <% if (hasAllDepartments) { %>
-            <div class="nav-category-wrap style-2 style-white">
-              <div class="nav-title btn-active" onclick="toggleCategoryMenu()">
-                <i class="icon-menu-dots fs-20"></i>
-                <h6 class="title fw-semibold">
-                  <%= header.name_all_departments || _.dictionary('allCategories') || 'All Categories' %>
-                </h6>
-              </div>
-              <nav class="category-menu" id="all-categories-menu">
-                <div class="menu-category-menu-container">
-                  <ul id="primary-menu" class="megamenu">
-                    <% _.categories.forEach(({ name, slug, _id, parent }) => { %>
-                      <% if (!parent || !parent.slug) { // Only main categories %>
-                        <li class="menu-item">
-                          <a href="/<%= slug %>" id="cd-all-<%= _id %>">
-                            <i class="icon-clothing fs-20"></i>
-                            <span><%= name %></span>
-                          </a>
-                        </li>
-                      <% } %>
-                    <% }) %>
-                  </ul>
-                </div>
-              </nav>
-            </div>
-          <% } %>
-          
-          <nav class="main-nav-menu style-white-2">
-            <ul class="nav-list">
-              <li class="nav-item active pst-unset">
-                <a href="/" class="item-link link body-md-2 fw-semibold">
-                  <span><%= _.dictionary('home') || 'Home' %></span>
-                </a>
-              </li>
-              <% categories.forEach(({ slug, name, _id }) => { %>
-                <% const subcategories = _.categories.filter(({ parent }) => parent && parent.slug === slug) %>
-                <li class="nav-item<%= subcategories.length ? ' pst-unset' : '' %>">
-                  <a href="/<%= slug %>" class="item-link body-md-2 fw-semibold" id="cd-<%= _id %>">
-                    <span><%= name %></span>
-                    <% if (subcategories.length) { %>
-                      <i class="icon icon-arrow-down"></i>
-                    <% } %>
-                  </a>
-                  <% if (subcategories.length && hasMegamenu) { %>
-                    <div class="sub-menu-container<%= fullWidthSubmenu ? ' mega-menu' : '' %>" id="<%= `s-${slug.replace(/\//g, '_')}` %>">
-                      <% if (fullWidthSubmenu) { %>
-                        <div class="wrapper-sub-menu">
-                          <div class="mega-menu-item">
-                            <p class="menu-heading body-small"><%= name.toUpperCase() %></p>
-                            <ul class="menu-list">
-                              <% subcategories.forEach(subcategory => { %>
-                                <li>
-                                  <a href="/<%= subcategory.slug %>" class="body-md-2 link" id="sd-<%= subcategory._id %>">
-                                    <span><%= subcategory.name %></span>
-                                  </a>
-                                </li>
-                              <% }) %>
-                            </ul>
-                          </div>
-                        </div>
-                      <% } else { %>
-                        <ul class="sub-menu-list">
-                          <% subcategories.forEach(subcategory => { %>
-                            <li>
-                              <a href="/<%= subcategory.slug %>" class="body-md-2 link" id="sd-<%= subcategory._id %>">
-                                <span><%= subcategory.name %></span>
-                              </a>
-                            </li>
-                          <% }) %>
-                        </ul>
-                      <% } %>
-                    </div>
-                  <% } %>
-                </li>
-              <% }) %>
-              
-              <% if (header.contacts_stripe && header.contacts_stripe.pages) { %>
-                <% header.contacts_stripe.pages.forEach(({ link, title }) => { %>
-                  <li class="nav-item">
-                    <a href="<%= link %>" class="item-link body-md-2 fw-semibold">
-                      <span><%= title %></span>
+ <% if (categories && categories.length) { %>
+  <div class="header-bottom d-none d-xl-block">
+    <div class="container">
+      <div class="header-bt-left active-container relative">
+        <div class="nav-category-wrap style-2 style-white">
+          <div class="nav-title btn-active" onclick="toggleCategoryMenu()">
+            <i class="icon-menu-dots fs-20"></i>
+            <h6 class="title fw-semibold m-0">
+              <%= _.dictionary('allCategories') || 'Todas as Categorias' %>
+            </h6>
+          </div>
+          <nav class="category-menu" id="all-categories-menu">
+            <div class="menu-category-menu-container">
+              <ul id="primary-menu" class="megamenu">
+                <% categories.forEach(({ name, slug, _id }) => { %>
+                  <li class="menu-item">
+                    <a href="/<%= slug %>" id="cd-all-<%= _id %>">
+                      <span><%= name %></span>
                     </a>
                   </li>
                 <% }) %>
-              <% } %>
-            </ul>
+              </ul>
+            </div>
           </nav>
         </div>
+        
+        <nav class="main-nav-menu style-white-2">
+          <ul class="nav-list m-0">
+            
+            <% categories.forEach(({ slug, name, _id }) => { %>
+              <% const subcategories = _.categories.filter(({ parent }) => parent && parent.slug === slug) %>
+              <li class="nav-item ">
+                <a href="/<%= slug %>" class="item-link body-md-2 fw-semibold" id="cd-<%= _id %>">
+                  <span><%= name %></span>
+                  <% if (subcategories.length) { %>
+                    <i class="icon icon-arrow-down"></i>
+                  <% } %>
+                </a>
+                <% if (subcategories.length && hasMegamenu) { %>
+                  <div class="sub-menu-container<%= fullWidthSubmenu ? ' mega-menu' : '' %>" id="<%= `s-${slug.replace(/\//g, '_')}` %>">
+                    <% if (fullWidthSubmenu) { %>
+                      <div class="wrapper-sub-menu">
+                        <div class="mega-menu-item">
+                          <p class="menu-heading body-small"><%= name.toUpperCase() %></p>
+                          <ul class="menu-list">
+                            <% subcategories.forEach(subcategory => { %>
+                              <li>
+                                <a href="/<%= subcategory.slug %>" class="body-md-2 link" id="sd-<%= subcategory._id %>">
+                                  <span><%= subcategory.name %></span>
+                                </a>
+                              </li>
+                            <% }) %>
+                          </ul>
+                        </div>
+                      </div>
+                    <% } else { %>
+                      <ul class="sub-menu-list">
+                        <% subcategories.forEach(subcategory => { %>
+                          <li>
+                            <a href="/<%= subcategory.slug %>" class="body-md-2 link" id="sd-<%= subcategory._id %>">
+                              <span><%= subcategory.name %></span>
+                            </a>
+                          </li>
+                        <% }) %>
+                      </ul>
+                    <% } %>
+                  </div>
+                <% } %>
+              </li>
+            <% }) %>
+            
+            <% if (header.contacts_stripe && header.contacts_stripe.pages) { %>
+              <% header.contacts_stripe.pages.forEach(({ link, title }) => { %>
+                <li class="nav-item">
+                  <a href="<%= link %>" class="item-link body-md-2 fw-semibold">
+                    <span><%= title %></span>
+                  </a>
+                </li>
+              <% }) %>
+            <% } %>
+          </ul>
+        </nav>
       </div>
     </div>
-  <% } %>
+  </div>
+<% } %>
   
   <div id="login-modal">
     <!--

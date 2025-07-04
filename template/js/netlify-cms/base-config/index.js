@@ -146,6 +146,22 @@ export default options => {
                       widget: "color",
                       required: false,
                       hint: "Selecione a cor do menu de navegação"
+                  },
+                  {
+                      label: "Categorias Principais",
+                      name: "categories",
+                      widget: "list",
+                      required: false,
+                      hint: "Adicione as categorias principais que aparecerão no menu",
+                      fields: [
+                          {
+                              label: "Título da Categoria",
+                              name: "title",
+                              widget: "string",
+                              required: true,
+                              hint: "Digite o nome da categoria principal"
+                          }
+                      ]
                   }
               ]
           },
