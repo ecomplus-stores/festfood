@@ -1,5 +1,13 @@
 {
   "bg_color": "#f2f2f2",
   "text_color": "#131313",
-  "menu_color": "#661389"
+  "menu_color": "#661389",
+  "categories": [
+    {
+      "title": "Vinho Tinto"
+    },
+    {
+      "title": "Vinho Branco"
+    }
+  ]
 }
