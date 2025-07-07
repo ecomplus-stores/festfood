@@ -24,6 +24,12 @@ export default options => {
       default: '3',
       options: ['4', '3', '2']
   });
+  bannersGrid.fields.push({
+    label: "Título da Sessão",
+    name: "title",
+    widget: "text",
+    required:false
+  });
   const collectionShelf = sections.find(el => el.name === 'collection-shelf')
   if (collectionShelf && Array.isArray(collectionShelf.fields)) {
     collectionShelf.fields.push({

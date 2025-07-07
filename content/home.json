@@ -56,25 +56,52 @@
       "enabled": true
     },
     {
-      "type": "collection-shelf",
+      "bg_color": "#941635",
+      "page": 1,
+      "grid_type": "Comum",
+      "title": "Vinhos Tintos",
       "shuffle": true,
-      "collection_id": "67ea0d783b75ec550cdbda6b:collections:Páscoa:/p/pascoa",
-      "sort": "offers",
-      "title": "Aqui tem promoção todo dia",
       "headless": false,
+      "type": "collection-shelf",
       "limit": 12,
-      "page": 1
+      "collection_id": "68475391578b5f7954384682:categories:Vinho Tinto:/w/vinho-tinto",
+      "title_color": "#ffffff",
+      "sort": "offers"
     },
     {
-      "type": "collection-shelf",
-      "shuffle": true,
-      "limit": 12,
-      "page": 1,
-      "sort": "sales",
-      "title": "Mais Vendidos",
-      "autoplay": "",
-      "collection_id": "681e02fa578b5f795411f762:collections:Ofertas:/p/ofertas"
+      "type": "banners-grid",
+      "grid_type": "3",
+      "banners": [
+        {
+          "img": "/img/uploads/01-103878 copy.jpg",
+          "bn_title": "Teste"
+        }
+      ]
     },
+    {
+      "bg_color": "#941635",
+      "page": 1,
+      "grid_type": "Comum",
+      "title": "Vinhos Tintos",
+      "shuffle": true,
+      "headless": false,
+      "type": "collection-shelf",
+      "limit": 12,
+      "collection_id": "68475391578b5f7954384682:categories:Vinho Tinto:/w/vinho-tinto",
+      "title_color": "#ffffff",
+      "sort": "offers"
+    },
+    {
+      "type": "banners-grid",
+      "grid_type": "3",
+      "banners": [
+        {
+          "img": "/img/uploads/01-103878 copy.jpg",
+          "bn_title": "Teste"
+        }
+      ]
+    },
+    
     {
       "type": "blog",
       "enabled": true
