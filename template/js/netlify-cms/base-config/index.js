@@ -8,7 +8,22 @@ import getWidgets from '@ecomplus/storefront-template/template/js/netlify-cms/ba
 
 export default options => {
   const sections = getSections(options)
-
+  const bannersGrid = sections.find(el => el.name === 'banners-grid')
+  bannersGrid.fields[0].fields.push({
+    label: "Título do Banner",
+    name: "bn_title",
+    widget: "text",
+    required:false
+  });
+  bannersGrid.fields.push({
+      label: 'Quantidade de Colunas (Desktop)',
+      required: false,
+      name: 'grid_type',
+      hint: 'Mobile sempre será uma coluna (1 banner por linha)',
+      widget: 'select',
+      default: '3',
+      options: ['4', '3', '2']
+  });
   const collectionShelf = sections.find(el => el.name === 'collection-shelf')
   if (collectionShelf && Array.isArray(collectionShelf.fields)) {
     collectionShelf.fields.push({
