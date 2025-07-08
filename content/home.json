@@ -76,7 +76,8 @@
           "img": "/img/uploads/01-103878 copy.jpg",
           "bn_title": "Teste"
         }
-      ]
+      ],
+      "title": "Título"
     },
     {
       "bg_color": "#941635",
@@ -101,7 +102,6 @@
         }
       ]
     },
-    
     {
       "type": "blog",
       "enabled": true
