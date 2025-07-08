@@ -4,10 +4,12 @@
    let preview = 4;
     if (opt.banners.length === 2) preview = 2;
     else if (opt.banners.length < 4) preview = opt.banners.length;
+
+    console.log(opt.banners)
     %>
    <section class="">
       <div class="container">
-        <div class="swiper tf-sw-categories"         data-preview="<%= preview %>"  data-tablet="3" data-mobile-sm="2"
+        <div class="swiper tf-sw-categories" data-preview="<%= preview %>"  data-tablet="3" data-mobile-sm="2"
           data-mobile="1" data-space-lg="14" data-space-md="15" data-space="15" data-pagination="1"
           data-pagination-sm="2" data-pagination-md="3" data-pagination-lg="4">
           <div class="swiper-wrapper">

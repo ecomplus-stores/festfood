@@ -152,6 +152,17 @@ if (header.marketing_stripe && !Array.isArray(header.marketing_stripe)) {
   .tf-header .mobile-button span:after {
     background-color: var(--header-text-color) !important;
   }
+
+  .header-bottom{
+    --gray:var(--primary);
+  }
+  .nav-category-wrap .nav-title.active .title,
+  .nav-category-wrap .nav-title.active i,
+  .nav-category-wrap.style-2 .nav-title:hover i,
+  .nav-category-wrap.style-2 .nav-title:hover .title{
+    color: var(--white)!important;
+    opacity: .8;
+  }
 </style>
 
 <div id="overlay" class="fade"></div>
@@ -343,7 +354,7 @@ if (header.marketing_stripe && !Array.isArray(header.marketing_stripe)) {
               <%= _.dictionary('allCategories') || 'Todas as Categorias' %>
             </h6>
           </div>
-          <nav class="category-menu" id="all-categories-menu">
+          <nav class="category-menu active-item" id="all-categories-menu">
             <div class="menu-category-menu-container">
               <ul id="primary-menu" class="megamenu">
                 <% categories.forEach(({ name, slug, _id }) => { %>
@@ -361,47 +372,54 @@ if (header.marketing_stripe && !Array.isArray(header.marketing_stripe)) {
         <nav class="main-nav-menu style-white-2">
           <ul class="nav-list m-0">
             
-            <% categories.forEach(({ slug, name, _id }) => { %>
-              <% const subcategories = _.categories.filter(({ parent }) => parent && parent.slug === slug) %>
-              <li class="nav-item ">
-                <a href="/<%= slug %>" class="item-link body-md-2 fw-semibold" id="cd-<%= _id %>">
-                  <span><%= name %></span>
-                  <% if (subcategories.length) { %>
-                    <i class="icon icon-arrow-down"></i>
-                  <% } %>
-                </a>
-                <% if (subcategories.length && hasMegamenu) { %>
-                  <div class="sub-menu-container<%= fullWidthSubmenu ? ' mega-menu' : '' %>" id="<%= `s-${slug.replace(/\//g, '_')}` %>">
-                    <% if (fullWidthSubmenu) { %>
-                      <div class="wrapper-sub-menu">
-                        <div class="mega-menu-item">
-                          <p class="menu-heading body-small"><%= name.toUpperCase() %></p>
-                          <ul class="menu-list">
-                            <% subcategories.forEach(subcategory => { %>
-                              <li>
-                                <a href="/<%= subcategory.slug %>" class="body-md-2 link" id="sd-<%= subcategory._id %>">
-                                  <span><%= subcategory.name %></span>
-                                </a>
-                              </li>
-                            <% }) %>
-                          </ul>
-                        </div>
-                      </div>
-                    <% } else { %>
-                      <ul class="sub-menu-list">
-                        <% subcategories.forEach(subcategory => { %>
-                          <li>
-                            <a href="/<%= subcategory.slug %>" class="body-md-2 link" id="sd-<%= subcategory._id %>">
-                              <span><%= subcategory.name %></span>
-                            </a>
-                          </li>
-                        <% }) %>
-                      </ul>
+            <% categories.forEach(({ slug, name, _id }) => { 
+              if(apx_header_color.categories.find(el => el.title.toLowerCase().trim() == name.toLowerCase().trim())) {
+                
+              
+              %>
+              
+                <% const subcategories = _.categories.filter(({ parent }) => parent && parent.slug === slug) %>
+                <li class="nav-item ">
+                  <a href="/<%= slug %>" class="item-link body-md-2 fw-semibold" id="cd-<%= _id %>">
+                    <span><%= name %></span>
+                    <% if (subcategories.length) { %>
+                      <i class="icon icon-arrow-down"></i>
                     <% } %>
-                  </div>
-                <% } %>
-              </li>
-            <% }) %>
+                  </a>
+                  <% if (subcategories.length && hasMegamenu) { %>
+                    <div class="sub-menu-container<%= fullWidthSubmenu ? ' mega-menu' : '' %>" id="<%= `s-${slug.replace(/\//g, '_')}` %>">
+                      <% if (fullWidthSubmenu) { %>
+                        <div class="wrapper-sub-menu">
+                          <div class="mega-menu-item">
+                            <p class="menu-heading body-small"><%= name.toUpperCase() %></p>
+                            <ul class="menu-list">
+                              <% subcategories.forEach(subcategory => { %>
+                                <li>
+                                  <a href="/<%= subcategory.slug %>" class="body-md-2 link" id="sd-<%= subcategory._id %>">
+                                    <span><%= subcategory.name %></span>
+                                  </a>
+                                </li>
+                              <% }) %>
+                            </ul>
+                          </div>
+                        </div>
+                      <% } else { %>
+                        <ul class="sub-menu-list">
+                          <% subcategories.forEach(subcategory => { %>
+                            <li>
+                              <a href="/<%= subcategory.slug %>" class="body-md-2 link" id="sd-<%= subcategory._id %>">
+                                <span><%= subcategory.name %></span>
+                              </a>
+                            </li>
+                          <% }) %>
+                        </ul>
+                      <% } %>
+                    </div>
+                  <% } %>
+                </li>
+              <% 
+              }
+            }) %>
             
             <% if (header.contacts_stripe && header.contacts_stripe.pages) { %>
               <% header.contacts_stripe.pages.forEach(({ link, title }) => { %>
@@ -447,27 +465,6 @@ if (header.marketing_stripe && !Array.isArray(header.marketing_stripe)) {
     %></script>
   <% } %>
   
-  <script>
-    // Toggle category menu functionality
-    function toggleCategoryMenu() {
-      const menu = document.getElementById('all-categories-menu');
-      const navWrap = document.querySelector('.nav-category-wrap');
-      if (menu && navWrap) {
-        menu.classList.toggle('active-item');
-        navWrap.classList.toggle('active-container');
-      }
-    }
-    
-    // Close category menu when clicking outside
-    document.addEventListener('click', function(event) {
-      const navWrap = document.querySelector('.nav-category-wrap');
-      const menu = document.getElementById('all-categories-menu');
-      if (navWrap && menu && !navWrap.contains(event.target)) {
-        menu.classList.remove('active-item');
-        navWrap.classList.remove('active-container');
-      }
-    });
-  </script>
 </header>
 <!-- /Header -->
 <% if (header.popup) { %>
