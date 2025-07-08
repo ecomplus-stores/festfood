@@ -118,6 +118,24 @@ window.messageBullet = function(message) {
 //     placeFavorites();
 //   }
 // }
+async function updateClientInfo(){
+let client = await EcomPassport.ecomPassport.getCustomer();   
+  if(client.display_name){
+    $('[data-client_name]').text(client.display_name);
+    $('[data-favorite_count]').text(client.favorites.length || 0);
+  }
+  console.log('client name',client)
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  updateClientInfo();
+  $('body').on('.wishlist','click', function() {
+    setTimeout(() => {
+      updateClientInfo();
+    }, 2000);
+  });
+ 
+});
 
 
 

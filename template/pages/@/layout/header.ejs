@@ -63,7 +63,8 @@ if (header.marketing_stripe && !Array.isArray(header.marketing_stripe)) {
   .header-right *,
   .header-right *:hover{text-decoration: none;}
   .tf-header,
-  .tf-header .header-bt-left {
+  .tf-header .header-bt-left,
+  .header-top {
     background-color: var(--header-bg-color) !important;
   }
   
@@ -74,7 +75,7 @@ if (header.marketing_stripe && !Array.isArray(header.marketing_stripe)) {
   .tf-header .inner-header {
     background-color: var(--header-bg-color);
   }
-  
+  .nav-category-wrap.style-2::after{right:-10px}
   .tf-header .header-bottom {
     background-color: var(--header-bg-color) !important;
   }
@@ -86,7 +87,9 @@ if (header.marketing_stripe && !Array.isArray(header.marketing_stripe)) {
   .tf-header .nav-icon-item span,
   .tf-header .nav-icon-item p,
   .tf-header .nav-icon-item .body-text-3,
-  .tf-header .nav-icon-item .number-item {
+  .tf-header .nav-icon-item .number-item,
+  .header-top .body-small,
+  .header-top .body-text-3 {
     color: var(--header-text-color) !important;
   }
   
@@ -118,7 +121,8 @@ if (header.marketing_stripe && !Array.isArray(header.marketing_stripe)) {
   
   .tf-header .icon-hearth,
   .tf-header .icon-cart,
-  .tf-header .icon-search {
+  .tf-header .icon-search,
+  .header-top .icon-user-2 {
     color: var(--header-text-color) !important;
   }
   
@@ -127,12 +131,18 @@ if (header.marketing_stripe && !Array.isArray(header.marketing_stripe)) {
     fill: var(--header-text-color) !important;
     stroke: var(--header-text-color) !important;
   }
+  .tf-header .nav-cart svg path {
+    fill: var(--header-text-color) !important;
+    stroke: unset !important;
+  }
   
   /* Count boxes */
   .tf-header .count-box {
     background-color: var(--header-text-color);
     color: var(--header-bg-color);
   }
+.tf-header .icon-search,
+  .tf-header .nav-icon.style-3 .nav-icon-item .count-box{color: var(--white)!important;}
   
   /* Links hover */
   .tf-header .link:hover,
@@ -149,7 +159,9 @@ if (header.marketing_stripe && !Array.isArray(header.marketing_stripe)) {
   /* Mobile button */
   .tf-header .mobile-button span,
   .tf-header .mobile-button span:before,
-  .tf-header .mobile-button span:after {
+  .tf-header .mobile-button span:after,
+  .tf-header .mobile-button:before,
+  .tf-header .mobile-button:after {
     background-color: var(--header-text-color) !important;
   }
 
@@ -168,9 +180,7 @@ if (header.marketing_stripe && !Array.isArray(header.marketing_stripe)) {
 <div id="overlay" class="fade"></div>
 
 <!-- Header -->
-<header class="tf-header style-3" id="header">
-  <!-- Top bar -->
-  <% if (header.contacts_stripe && (header.contacts_stripe.pages || header.contacts_stripe.phone_wpp || header.contacts_stripe.socials)) { %>
+ <% if (header.contacts_stripe && (header.contacts_stripe.pages || header.contacts_stripe.phone_wpp || header.contacts_stripe.socials)) { %>
     <div class="header-top pt-3  d-none d-md-block">
       <div class="container">
         <div class="row">
@@ -211,8 +221,7 @@ if (header.marketing_stripe && !Array.isArray(header.marketing_stripe)) {
              
               <a href="/app/#/account/" class="link tf-cur-item text-white" id="user-button-top">
                 <i class="icon-user-2 text-main-2"></i>
-                <span class="body-small"><%= _.dictionary('myAccount') || 'My account' %>:</span>
-                <i class="icon-arrow-down"></i>
+                <span class="body-small" data-client_name>Minha conta</span>
               </a>
             </div>
           </div>
@@ -220,8 +229,11 @@ if (header.marketing_stripe && !Array.isArray(header.marketing_stripe)) {
       </div>
     </div>
   <% } %>
+<header class="tf-header style-3" id="header">
+  <!-- Top bar -->
   
-  <div class="inner-header py-md-4 my-md-2">
+  
+  <div class="inner-header py-md-4 mb-md-2">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-auto col-7 d-flex align-items-center">
@@ -268,11 +280,11 @@ if (header.marketing_stripe && !Array.isArray(header.marketing_stripe)) {
                 <a href="/app/#/account/" class="nav-icon-item">
                   <span class="icon position-relative">
                     <i class="icon-hearth text-white link"></i>
-                    <span class="count-box">0</span>
+                    <span class="count-box" data-favorite_count>0</span>
                   </span>
                   <div class="infor text-start">
                     <span class="body-text-3 text-main-2">Favoritos:</span>
-                    <h6 class="number-item fw-semibold text-main-2">0 item</h6>
+                    <h6 class="number-item fw-semibold text-main-2"><span data-favorite_count>0</span> item(s)</h6>
                   </div>
                 </a>
               </li>
@@ -289,7 +301,7 @@ if (header.marketing_stripe && !Array.isArray(header.marketing_stripe)) {
                 </a>
               </li>
             </ul>
-            <ul class="nav-icon justify-content-xl-center d-xl-none">
+            <ul class="nav-icon m-0 justify-content-xl-center d-xl-none">
               <li class="nav-account">
                 <a href="/app/#/account/" class="link nav-icon-item text-white" id="user-button">
                   <span>
@@ -324,19 +336,7 @@ if (header.marketing_stripe && !Array.isArray(header.marketing_stripe)) {
               </li>
             </ul>
             
-            <!-- Search button for mobile -->
-            <button
-              class="d-lg-none btn btn-lg"
-              id="mobile-search-btn"
-              type="button"
-              data-toggle="collapse"
-              data-target="#search-bar"
-              aria-expanded="true"
-              aria-controls="search-bar"
-              title="<%= _.dictionary('searchProducts') %>"
-            >
-              <i class="i-search"></i>
-            </button>
+           
           </div>
         </div>
       </div>

@@ -3,6 +3,25 @@
   "meta_description": "Ofertas",
   "sections": [
     {
+      "type": "banners-grid",
+      "grid_type": "Mosaico",
+      "banners": [
+        {
+          "img": "/img/uploads/01-103878 copy.jpg",
+          "bn_title": "Teste"
+        },
+        {
+          "img": "/img/uploads/01-103878 copy.jpg",
+          "bn_title": "Teste"
+        },
+        {
+          "img": "/img/uploads/01-103878 copy.jpg",
+          "bn_title": "Teste"
+        }
+      ],
+      "title": "Título"
+    },
+    {
       "type": "banner-slider",
       "autoplay": 4000,
       "full_width": true,
@@ -123,6 +142,24 @@
       "collection_id": "68475391578b5f7954384682:categories:Vinho Tinto:/w/vinho-tinto",
       "title_color": "#ffffff",
       "sort": "offers"
+    },
+    {
+      "type": "banners-grid",
+      "grid_type": "3",
+      "banners": [
+        {
+          "img": "/img/uploads/01-103878 copy.jpg",
+          "bn_title": "Teste"
+        },
+        {
+          "img": "/img/uploads/01-103878 copy.jpg",
+          "bn_title": "Teste"
+        },
+        {
+          "img": "/img/uploads/01-103878 copy.jpg",
+          "bn_title": "Teste"
+        }
+      ]
     },
     {
       "type": "banners-grid",

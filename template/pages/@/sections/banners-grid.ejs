@@ -6,16 +6,101 @@
     else if (opt.banners.length < 4) preview = opt.banners.length;
 
     console.log(opt)
+    if(opt.grid_type == "Mosaico"){  
+      const mosaicBanners = opt.banners.slice(0, 3);
+%>
+    <div class="tf-sp-1">
+        <div class="container">
+            <div class="slide-wrap-2 flex-xl-nowrap m-0">
+                <% if (mosaicBanners[0]) { %>
+                    <div class="banner-slide-product flex-md-nowrap hover-img has-bg-img p-0" 
+                         <% if (mosaicBanners[0].img) { %>
+                            data-bg-img="<%= _.assetsPrefix || '' %><%= mosaicBanners[0].img %>" 
+                            style="background-image: url('<%= _.assetsPrefix || '' %><%= mosaicBanners[0].img %>'); background-position: left center;"
+                         <% } %>>
+                        <a href="<%= mosaicBanners[0].link || '#' %>" class="">
+                              <picture class="img-fluid">
+                                <% if (mosaicBanners[0].mobile_img) { %>
+                                    <source
+                                        srcset="<%= _.assetsPrefix || '' %><%= mosaicBanners[0].mobile_img %>"
+                                        media="(max-width: 767px)"
+                                    >
+                                <% } %>
+                                <img
+                                    src="<%= _.assetsPrefix || '' %><%= mosaicBanners[0].img %>"
+                                    data-src="<%= _.assetsPrefix || '' %><%= mosaicBanners[0].img %>"
+                                    alt="<%= mosaicBanners[0].alt || mosaicBanners[0].title || '' %>"
+                                    class="lazyload"
+                                >
+                            </picture>
+                        </a>
+                       
+                    </div>
+                <% } %>
+                
+                <div class="wrap flex-xl-column">
+                    <% if (mosaicBanners[1]) { %>
+                        <div class="cls-product has-bg-img hover-img">
+                            <a href="<%= mosaicBanners[1].link || '#' %>" class="">
+                                <picture class="img-fluid">
+                                    <% if (mosaicBanners[1].mobile_img) { %>
+                                        <source
+                                            srcset="<%= _.assetsPrefix || '' %><%= mosaicBanners[1].mobile_img %>"
+                                            media="(max-width: 767px)"
+                                        >
+                                    <% } %>
+                                    <img
+                                        src="<%= _.assetsPrefix || '' %><%= mosaicBanners[1].img %>"
+                                        data-src="<%= _.assetsPrefix || '' %><%= mosaicBanners[0].img %>"
+                                        alt="<%= mosaicBanners[0].alt || mosaicBanners[1].title || '' %>"
+                                        class="lazyload"
+                                    >
+                                </picture>
+                            </a>
+                            
+                        </div>
+                    <% } %>
+                    
+                    <% if (mosaicBanners[2]) { %>
+                        <div class="cls-product style-2 has-bg-img hover-img">
+                            <a href="<%= mosaicBanners[2].link || '#' %>" class="">
+                                <picture class="img-fluid">
+                                    <% if (mosaicBanners[2].mobile_img) { %>
+                                        <source
+                                            srcset="<%= _.assetsPrefix || '' %><%= mosaicBanners[2].mobile_img %>"
+                                            media="(max-width: 767px)"
+                                        >
+                                    <% } %>
+                                    <img
+                                        src="<%= _.assetsPrefix || '' %><%= mosaicBanners[2].img %>"
+                                        data-src="<%= _.assetsPrefix || '' %><%= mosaicBanners[2].img %>"
+                                        alt="<%= mosaicBanners[2].alt || mosaicBanners[2].title || '' %>"
+                                        class="lazyload"
+                                    >
+                                </picture>
+                            </a>
+                           
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+<%
 
+    }
     if(opt.banners.find(el => el.bn_title != undefined)){
 %>
 <!-- Top Categories Section -->
 <section class="tf-sp-2 pt-0 wow fadeInUp animated" data-wow-delay="0s">
     <div class="container">
+      
         <div class="flat-title mb-20 pb-0 border-0">
-            <h5 class="fw-semibold">
-                <%= opt.title || _.dictionary('topCategories') || 'Top Categories Of The Month' %>
+          <% if (opt.title) {%>  
+          <h5 class="fw-semibold">
+                <%= opt.title %>
             </h5>
+          <% } %>
             <div class="box-btn-slide relative">
                 <div class="swiper-button-prev nav-swiper nav-prev-products">
                     <i class="icon-arrow-left-lg"></i>
@@ -25,6 +110,7 @@
                 </div>
             </div>
         </div>
+      
         
         <!-- Swiper Grid -->
         <div class="swiper tf-sw-products" data-preview="4" data-tablet="3" data-mobile-sm="2" data-mobile="1"

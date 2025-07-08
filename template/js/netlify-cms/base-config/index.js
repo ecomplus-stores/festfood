@@ -15,21 +15,24 @@ export default options => {
     widget: "text",
     required:false
   });
-  bannersGrid.fields.push({
-      label: 'Quantidade de Colunas (Desktop)',
-      required: false,
-      name: 'grid_type',
-      hint: 'Mobile sempre será uma coluna (1 banner por linha)',
-      widget: 'select',
-      default: '3',
-      options: ['4', '3', '2']
-  });
+ 
   bannersGrid.fields.push({
     label: "Título da Sessão",
     name: "title",
     widget: "text",
     required:false
   });
+  bannersGrid.fields.push(
+    {
+      label: 'Tipo de grade',
+      required: false,
+      name: 'grid_type',
+      hint: '',
+      widget: 'select',
+      default: 'Comum',
+      options: ['Comum', 'Mosaico']
+    }
+  )
   const collectionShelf = sections.find(el => el.name === 'collection-shelf')
   if (collectionShelf && Array.isArray(collectionShelf.fields)) {
     collectionShelf.fields.push({
