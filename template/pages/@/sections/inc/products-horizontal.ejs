@@ -73,7 +73,7 @@
               <% for (let j = 0; j < 2; j++) { 
                 const idx = i + j
                 if (!opt.items[idx]) continue
-                if (!opt.items[idx].slug || !/^\w*w\w*\//.test(opt.items[idx].slug)) continue
+                if (!opt.items[idx].slug || !/^\w*f\w*\//.test(opt.items[idx].slug)) continue
               %>
                 <div class="product-item-horizontal-inner">
                   <%- await include('@/sections/inc/product-item', {
