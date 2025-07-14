@@ -7,19 +7,31 @@
       "grid_type": "Mosaico",
       "banners": [
         {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
+          "img": "/img/uploads/festpan_bnr_diadasmaes_sem1_01.jpg",
+          "bn_title": "Teste",
+          "link": "https://festfood.netlify.app/w/vinho-tinto"
         },
         {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
+          "img": "/img/uploads/01-banner copy.jpg",
+          "bn_title": "Teste",
+          "link": "https://festfood.netlify.app/w/vinho-branco"
         },
         {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
+          "img": "/img/uploads/01-TodalinhaICEBERG copy.jpg",
+          "bn_title": "Teste",
+          "link": "https://festfood.netlify.app/w/sb-malbec"
         }
       ],
       "title": "Título"
+    },
+    {
+      "type": "collection-shelf",
+      "shuffle": false,
+      "limit": 12,
+      "page": 1,
+      "grid_type": "Comum",
+      "collection_id": "681e02fa578b5f795411f762:collections:Ofertas:/p/ofertas",
+      "sort": "sales"
     },
     {
       "type": "banner-slider",
