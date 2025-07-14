@@ -3,10 +3,6 @@
   "meta_description": "Ofertas",
   "sections": [
     {
-      "type": "info-bar",
-      "enabled": true
-    },
-    {
       "type": "banners-grid",
       "grid_type": "Mosaico",
       "banners": [
@@ -27,6 +23,10 @@
         }
       ],
       "title": "Título"
+    },
+    {
+      "type": "info-bar",
+      "enabled": true
     },
     {
       "type": "banners-grid",
