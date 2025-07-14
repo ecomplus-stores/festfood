@@ -3,6 +3,10 @@
   "meta_description": "Ofertas",
   "sections": [
     {
+      "type": "info-bar",
+      "enabled": true
+    },
+    {
       "type": "banners-grid",
       "grid_type": "Mosaico",
       "banners": [
@@ -25,6 +29,49 @@
       "title": "Título"
     },
     {
+      "type": "banners-grid",
+      "grid_type": "3",
+      "banners": [
+        {
+          "img": "/img/uploads/01-103878 copy.jpg",
+          "bn_title": "Teste"
+        },
+        {
+          "img": "/img/uploads/01-103878 copy.jpg",
+          "bn_title": "Teste"
+        },
+        {
+          "img": "/img/uploads/01-103878 copy.jpg",
+          "bn_title": "Teste"
+        },
+        {
+          "img": "/img/uploads/01-103878 copy.jpg",
+          "bn_title": "Teste"
+        },
+        {
+          "img": "/img/uploads/01-103878 copy.jpg",
+          "bn_title": "Teste"
+        },
+        {
+          "img": "/img/uploads/01-103878 copy.jpg",
+          "bn_title": "Teste"
+        },
+        {
+          "img": "/img/uploads/01-103878 copy.jpg",
+          "bn_title": "Teste"
+        },
+        {
+          "img": "/img/uploads/01-103878 copy.jpg",
+          "bn_title": "Teste"
+        },
+        {
+          "img": "/img/uploads/01-103878 copy.jpg",
+          "bn_title": "Teste"
+        }
+      ],
+      "title": "Título"
+    },
+    {
       "type": "collection-shelf",
       "shuffle": false,
       "limit": 12,
@@ -32,6 +79,24 @@
       "grid_type": "Comum",
       "collection_id": "681e02fa578b5f795411f762:collections:Ofertas:/p/ofertas",
       "sort": "sales"
+    },
+    {
+      "type": "banners-grid",
+      "grid_type": "3",
+      "banners": [
+        {
+          "img": "/img/uploads/01-103878 copy.jpg",
+          "bn_title": "Teste"
+        },
+        {
+          "img": "/img/uploads/01-103878 copy.jpg",
+          "bn_title": "Teste"
+        },
+        {
+          "img": "/img/uploads/01-103878 copy.jpg",
+          "bn_title": "Teste"
+        }
+      ]
     },
     {
       "type": "banner-slider",
@@ -83,10 +148,6 @@
       ]
     },
     {
-      "type": "info-bar",
-      "enabled": true
-    },
-    {
       "bg_color": "#941635",
       "page": 1,
       "grid_type": "Comum",
@@ -100,49 +161,6 @@
       "sort": "offers"
     },
     {
-      "type": "banners-grid",
-      "grid_type": "3",
-      "banners": [
-        {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
-        },
-        {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
-        },
-        {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
-        },
-        {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
-        },
-        {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
-        },
-        {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
-        },
-        {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
-        },
-        {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
-        },
-        {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
-        }
-      ],
-      "title": "Título"
-    },
-    {
       "bg_color": "#941635",
       "page": 1,
       "grid_type": "Comum",
@@ -154,24 +172,6 @@
       "collection_id": "68475391578b5f7954384682:categories:Vinho Tinto:/w/vinho-tinto",
       "title_color": "#ffffff",
       "sort": "offers"
-    },
-    {
-      "type": "banners-grid",
-      "grid_type": "3",
-      "banners": [
-        {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
-        },
-        {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
-        },
-        {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
-        }
-      ]
     },
     {
       "type": "banners-grid",
@@ -229,7 +229,7 @@
     },
     {
       "type": "banners-grid",
-      "grid_type": "3",
+      "grid_type": null,
       "banners": [
         {
           "img": "/img/uploads/01-103878 copy.jpg",
