@@ -11,17 +11,17 @@
       "grid_type": "Mosaico",
       "banners": [
         {
-          "img": "/img/uploads/festpan_bnr_diadasmaes_sem1_01.jpg",
+          "img": "/img/uploads/1070-x-440.png",
           "bn_title": "Teste",
           "link": "https://festfood.netlify.app/w/vinho-tinto"
         },
         {
-          "img": "/img/uploads/01-banner copy.jpg",
+          "img": "/img/uploads/300-x-200.png",
           "bn_title": "Teste",
           "link": "https://festfood.netlify.app/w/vinho-branco"
         },
         {
-          "img": "/img/uploads/01-TodalinhaICEBERG copy.jpg",
+          "img": "/img/uploads/300-x-200.png",
           "bn_title": "Teste",
           "link": "https://festfood.netlify.app/w/sb-malbec"
         }
