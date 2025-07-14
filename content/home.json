@@ -30,7 +30,7 @@
     },
     {
       "type": "banners-grid",
-      "grid_type": "Mosaico",
+      "grid_type": null,
       "banners": [
         {
           "img": "/img/uploads/350-150.png",
