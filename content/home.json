@@ -77,6 +77,34 @@
       "sort": "sales"
     },
     {
+      "type": "banner-slider",
+      "autoplay": 0,
+      "full_width": false,
+      "slides": [
+        {
+          "start": "",
+          "end": "",
+          "img": "/img/uploads/nestle_fevereiro.jpg",
+          "link": "https://www.festcakes.com.br/search?term=nestl%C3%A9&utm_source=site&utm_medium=banner&utm_campaign=parceria_nestle",
+          "alt": "309"
+        },
+        {
+          "start": "",
+          "end": "",
+          "img": "/img/uploads/valentine10off.jpg",
+          "link": "https://www.festcakes.com.br/search?term=Amor++Ideia&utm_source=site&utm_medium=banner&utm_campaign=valentine10off",
+          "alt": "315"
+        },
+        {
+          "start": "",
+          "end": "",
+          "img": "/img/uploads/01-pascoa.jpg",
+          "link": "https://www.festcakes.com.br/search?term=P%C3%A1scoa&utm_source=site&utm_medium=banner&utm_campaign=01-pascoa",
+          "alt": "300"
+        }
+      ]
+    },
+    {
       "type": "banners-grid",
       "grid_type": "3",
       "banners": [
@@ -106,55 +134,6 @@
       "collection_id": "66a845ad86679971c62d0cb0:categories:Mercearia:/p/mercearia",
       "title_color": "#ffffff",
       "sort": "sales"
-    },
-    {
-      "type": "banner-slider",
-      "autoplay": 4000,
-      "full_width": true,
-      "slides": [
-        {
-          "start": "",
-          "end": "",
-          "img": "/img/uploads/nestle_fevereiro.jpg",
-          "link": "https://www.festcakes.com.br/search?term=nestl%C3%A9&utm_source=site&utm_medium=banner&utm_campaign=parceria_nestle",
-          "alt": "309"
-        },
-        {
-          "start": "",
-          "end": "",
-          "img": "/img/uploads/valentine10off.jpg",
-          "link": "https://www.festcakes.com.br/search?term=Amor++Ideia&utm_source=site&utm_medium=banner&utm_campaign=valentine10off",
-          "alt": "315"
-        },
-        {
-          "start": "",
-          "end": "",
-          "img": "/img/uploads/01-pascoa.jpg",
-          "link": "https://www.festcakes.com.br/search?term=P%C3%A1scoa&utm_source=site&utm_medium=banner&utm_campaign=01-pascoa",
-          "alt": "300"
-        },
-        {
-          "start": "",
-          "end": "",
-          "img": "/img/uploads/valentinebrinde.jpg",
-          "link": "https://www.festcakes.com.br/search?term=bwb&utm_source=site&utm_medium=banner&utm_campaign=valentinebrinde",
-          "alt": "316"
-        },
-        {
-          "start": "",
-          "end": "",
-          "img": "/img/uploads/04-pascoa.jpg",
-          "link": "https://www.festcakes.com.br/search?term=forma+acetato&utm_source=site&utm_medium=banner&utm_campaign=04-pascoa-forma-acetato",
-          "alt": "305"
-        },
-        {
-          "start": "",
-          "end": "",
-          "img": "/img/uploads/valentine.jpg",
-          "link": "https://www.festcakes.com.br/pk/aplique-te-amo-modelo-2-mdf-glitter-vermelho-sonho-fino?utm_source=site&utm_medium=banner&utm_campaign=valentine",
-          "alt": "317"
-        }
-      ]
     },
     {
       "bg_color": "#941635",
