@@ -84,21 +84,21 @@
         {
           "start": "",
           "end": "",
-          "img": "/img/uploads/nestle_fevereiro.jpg",
+          "img": "/img/uploads/350-150.png",
           "link": "https://www.festcakes.com.br/search?term=nestl%C3%A9&utm_source=site&utm_medium=banner&utm_campaign=parceria_nestle",
           "alt": "309"
         },
         {
           "start": "",
           "end": "",
-          "img": "/img/uploads/valentine10off.jpg",
+          "img": "/img/uploads/350-150.png",
           "link": "https://www.festcakes.com.br/search?term=Amor++Ideia&utm_source=site&utm_medium=banner&utm_campaign=valentine10off",
           "alt": "315"
         },
         {
           "start": "",
           "end": "",
-          "img": "/img/uploads/01-pascoa.jpg",
+          "img": "/img/uploads/350-150.png",
           "link": "https://www.festcakes.com.br/search?term=P%C3%A1scoa&utm_source=site&utm_medium=banner&utm_campaign=01-pascoa",
           "alt": "300"
         }
@@ -150,48 +150,8 @@
     },
     {
       "type": "banners-grid",
-      "grid_type": "3",
+      "grid_type": null,
       "banners": [
-        {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
-        },
-        {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
-        },
-        {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
-        },
-        {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
-        },
-        {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
-        },
-        {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
-        },
-        {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
-        },
-        {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
-        },
-        {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
-        },
-        {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
-        },
         {
           "img": "/img/uploads/01-103878 copy.jpg",
           "bn_title": "Teste"
@@ -201,16 +161,6 @@
     {
       "type": "blog",
       "enabled": true
-    },
-    {
-      "type": "banners-grid",
-      "grid_type": null,
-      "banners": [
-        {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
-        }
-      ]
     }
   ]
 }
