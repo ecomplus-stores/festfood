@@ -103,7 +103,7 @@
       "headless": false,
       "type": "collection-shelf",
       "limit": 12,
-      "collection_id": "66a846ae86679971c62d0e3e:categories:Recheio Pronto:/k/sb1-recheio-pronto",
+      "collection_id": "66a845ad86679971c62d0cb0:categories:Mercearia:/p/mercearia",
       "title_color": "#ffffff",
       "sort": "sales"
     },
@@ -165,9 +165,9 @@
       "headless": false,
       "type": "collection-shelf",
       "limit": 12,
-      "collection_id": "68475391578b5f7954384682:categories:Vinho Tinto:/w/vinho-tinto",
+      "collection_id": "66a845af86679971c62d0cb3:categories:Frutas secas e grãos:/p/sb-frutas-secas-e-graos",
       "title_color": "#ffffff",
-      "sort": "offers"
+      "sort": "sales"
     },
     {
       "type": "banners-grid",
