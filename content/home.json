@@ -105,19 +105,18 @@
       ]
     },
     {
+      "type": "collection-shelf",
+      "shuffle": false,
+      "limit": 12,
+      "page": 1,
+      "grid_type": "Comum"
+    },
+    {
       "type": "banners-grid",
       "grid_type": "3",
       "banners": [
         {
-          "img": "/img/uploads/600-x-200.png",
-          "bn_title": "Teste"
-        },
-        {
-          "img": "/img/uploads/600-x-200.png",
-          "bn_title": "Teste"
-        },
-        {
-          "img": "/img/uploads/600-x-200.png",
+          "img": "/img/uploads/1070-x-440.png",
           "bn_title": "Teste"
         }
       ]
@@ -149,14 +148,11 @@
       "sort": "sales"
     },
     {
-      "type": "banners-grid",
-      "grid_type": null,
-      "banners": [
-        {
-          "img": "/img/uploads/01-103878 copy.jpg",
-          "bn_title": "Teste"
-        }
-      ]
+      "type": "collection-shelf",
+      "shuffle": false,
+      "limit": 12,
+      "page": 1,
+      "grid_type": "Comum"
     },
     {
       "type": "blog",
