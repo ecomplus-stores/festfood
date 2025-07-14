@@ -102,14 +102,14 @@
       "bg_color": "#941635",
       "page": 1,
       "grid_type": "Comum",
-      "title": "Vinhos Tintos",
+      "title": "Recheio Pronto",
       "shuffle": true,
       "headless": false,
       "type": "collection-shelf",
       "limit": 12,
-      "collection_id": "68475391578b5f7954384682:categories:Vinho Tinto:/w/vinho-tinto",
+      "collection_id": "66a846ae86679971c62d0e3e:categories:Recheio Pronto:/k/sb1-recheio-pronto",
       "title_color": "#ffffff",
-      "sort": "offers"
+      "sort": "sales"
     },
     {
       "type": "banner-slider",
