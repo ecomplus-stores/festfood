@@ -13,7 +13,7 @@
         <div class="container">
             <div class="slide-wrap-2 flex-xl-nowrap m-0">
                 <% if (mosaicBanners[0]) { %>
-                    <div class="banner-slide-product flex-md-nowrap hover-img has-bg-img p-0" 
+                    <div class="banner-slide-product overflow-hidden flex-md-nowrap hover-img has-bg-img p-0" 
                          <% if (mosaicBanners[0].img) { %>
                             data-bg-img="<%= _.assetsPrefix || '' %><%= mosaicBanners[0].img %>" 
                             style="background-image: url('<%= _.assetsPrefix || '' %><%= mosaicBanners[0].img %>'); background-position: left center;"
@@ -40,7 +40,7 @@
                 
                 <div class="wrap flex-xl-column">
                     <% if (mosaicBanners[1]) { %>
-                        <div class="cls-product has-bg-img hover-img">
+                        <div class="cls-product  overflow-hidden has-bg-img hover-img p-0">
                             <a href="<%= mosaicBanners[1].link || '#' %>" class="">
                                 <picture class="img-fluid">
                                     <% if (mosaicBanners[1].mobile_img) { %>
@@ -62,7 +62,7 @@
                     <% } %>
                     
                     <% if (mosaicBanners[2]) { %>
-                        <div class="cls-product style-2 has-bg-img hover-img">
+                        <div class="cls-product  overflow-hidden style-2 has-bg-img hover-img  p-0">
                             <a href="<%= mosaicBanners[2].link || '#' %>" class="">
                                 <picture class="img-fluid">
                                     <% if (mosaicBanners[2].mobile_img) { %>
@@ -89,7 +89,7 @@
 <%
 
     }
-    if(opt.banners.find(el => el.bn_title != undefined)){
+    else if(opt.banners.find(el => el.bn_title != undefined)){
 %>
 <!-- Top Categories Section -->
 <section class="tf-sp-2 pt-0 wow fadeInUp animated" data-wow-delay="0s">
@@ -136,7 +136,7 @@
                             <div class="content">
                                 <h6 class="fw-normal">
                                     <a href="<%= banner.link || '#' %>" class="link">
-                                        <%= banner.bn_title || banner.title || 'Category' %>
+                                        <%= banner.bn_title || banner.title  %>
                                     </a>
                                 </h6>
                                 <% if (banner.subtitle) { %>

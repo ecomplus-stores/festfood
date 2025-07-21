@@ -57,9 +57,17 @@ if (header.marketing_stripe && !Array.isArray(header.marketing_stripe)) {
 <style>
   :root {
     --header-bg-color: <%= bgColor %>;
+    --header-border-color: <%= apx_header_color.border_menu_color %>;
     --header-text-color: <%= textColor %>;
     --header-menu-color: <%= menuColor %>;
   }
+  .header-bottom{
+    border-top: 1px solid var(--header-border-color) !important;
+  }
+  .header-top{
+    border-bottom: 1px solid var(--header-border-color) !important;
+  }
+
   .header-right *,
   .header-right *:hover{text-decoration: none;}
   .tf-header,
@@ -181,7 +189,7 @@ if (header.marketing_stripe && !Array.isArray(header.marketing_stripe)) {
 
 <!-- Header -->
  <% if (header.contacts_stripe && (header.contacts_stripe.pages || header.contacts_stripe.phone_wpp || header.contacts_stripe.socials)) { %>
-    <div class="header-top pt-3  d-none d-md-block">
+    <div class="header-top py-2  d-none d-md-block">
       <div class="container">
         <div class="row">
           <div class="col-xl-6 col-12">

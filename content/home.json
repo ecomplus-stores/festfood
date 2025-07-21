@@ -7,65 +7,61 @@
       "grid_type": "Mosaico",
       "banners": [
         {
-          "img": "/img/uploads/1070-x-440.png",
+          "img": "/img/uploads/1070x553.svg",
           "bn_title": "Teste",
           "link": "https://festfood.netlify.app/w/vinho-tinto"
         },
         {
-          "img": "/img/uploads/300-x-200.png",
+          "img": "/img/uploads/400x266.svg",
           "bn_title": "Teste",
           "link": "https://festfood.netlify.app/w/vinho-branco"
         },
         {
-          "img": "/img/uploads/300-x-200.png",
+          "img": "/img/uploads/400x266.svg",
           "bn_title": "Teste",
           "link": "https://festfood.netlify.app/w/sb-malbec"
         }
-      ],
-      "title": "Título"
+      ]
     },
-    {
-      "type": "info-bar",
-      "enabled": true
-    },
+    
     {
       "type": "banners-grid",
       "grid_type": null,
       "banners": [
         {
           "img": "/img/uploads/350-150.png",
-          "bn_title": "Teste"
+          "bn_title": ""
         },
         {
           "img": "/img/uploads/350-150.png",
-          "bn_title": "Teste"
+          "bn_title": ""
         },
         {
           "img": "/img/uploads/350-150.png",
-          "bn_title": "Teste"
+          "bn_title": ""
         },
         {
           "img": "/img/uploads/350-150.png",
-          "bn_title": "Teste"
+          "bn_title": ""
         },
         {
           "img": "/img/uploads/350-150.png",
-          "bn_title": "Teste"
+          "bn_title": ""
         },
         {
           "img": "/img/uploads/350-150.png",
-          "bn_title": "Teste"
+          "bn_title": ""
         },
         {
           "img": "/img/uploads/350-150.png",
-          "bn_title": "Teste"
+          "bn_title": ""
         },
         {
           "img": "/img/uploads/350-150.png",
-          "bn_title": "Teste"
+          "bn_title": ""
         }
       ],
-      "title": "Título"
+      "title": ""
     },
     {
       "type": "collection-shelf",

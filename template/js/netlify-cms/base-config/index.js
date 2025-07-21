@@ -150,6 +150,13 @@ export default options => {
                   preview: false
               },
               fields: [
+                {
+                      label: "Cor da Linha Divisória",
+                      name: "border_menu_color",
+                      widget: "color",
+                      required: false,
+                      hint: "Selecione a cor da linha que separa o cabeçalho do menu"
+                  },
                   {
                       label: "Cor do Fundo",
                       name: "bg_color",

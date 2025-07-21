@@ -1,4 +1,4 @@
-<!-- ...existing code... -->
+
 <section>
 <div class="tf-product-media-wrap thumbs-default sticky-top mb-4">
   <div class="thumbs-slider">
@@ -62,9 +62,8 @@
             :href="getImg(picture, null, 'big').url"
             target="_blank"
             class="item"
-            :data-pswp-width="picture.width || 600"
-            :data-pswp-height="picture.height || 800"
-        
+            :data-pswp-width="picture['zoom'].size.split('x')[0] || 600"
+            :data-pswp-height="picture['zoom'].size.split('x')[1] || 800"
           >
             <img
               class="tf-image-zoom "
@@ -175,4 +174,3 @@
     </div>
   </div>
 </section>
-<!-- ...existing code... -->
