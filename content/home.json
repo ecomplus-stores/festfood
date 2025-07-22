@@ -108,7 +108,7 @@
     },
     {
       "type": "banners-grid",
-      "grid_type": "3",
+      "grid_type": "Mosaico",
       "banners": [
         {
           "img": "/img/uploads/1070-x-440.png",
