@@ -68,8 +68,8 @@
       "limit": 12,
       "page": 1,
       "grid_type": "Comum",
-      "collection_id": "681e02fa578b5f795411f762:collections:Ofertas:/p/ofertas",
-      "sort": "slug"
+      "collection_id": "687fcf57578b5f79546dfdc7:collections:Oferta Teste:/f/oferta-teste",
+      "sort": "sales"
     },
     {
       "type": "banner-slider",
