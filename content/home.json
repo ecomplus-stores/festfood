@@ -12,18 +12,17 @@
           "link": "https://festfood.netlify.app/w/vinho-tinto"
         },
         {
-          "img": "/img/uploads/400x266.svg",
+          "img": "/img/uploads/293-x-231.png",
           "bn_title": "Teste",
           "link": "https://festfood.netlify.app/w/vinho-branco"
         },
         {
-          "img": "/img/uploads/400x266.svg",
+          "img": "/img/uploads/293-x-231.png",
           "bn_title": "Teste",
           "link": "https://festfood.netlify.app/w/sb-malbec"
         }
       ]
     },
-    
     {
       "type": "banners-grid",
       "grid_type": null,
