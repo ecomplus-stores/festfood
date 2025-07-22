@@ -69,7 +69,7 @@
       "page": 1,
       "grid_type": "Comum",
       "collection_id": "681e0755578b5f795411fe70:collections:Ofertas:/k/ofertas",
-      "sort": "offers"
+      "sort": "slug"
     },
     {
       "type": "banner-slider",
