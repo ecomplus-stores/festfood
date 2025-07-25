@@ -250,7 +250,7 @@ export default {
               }
             }
             const { quantity, price } = data
-            //console.log('buy', data)
+            console.log('buy', data)
             ecomCart.addProduct({ ...product, quantity, price })
           })
           .catch(err => {
@@ -263,7 +263,7 @@ export default {
       }
     },
     // refreshFavorite() {
-    //   //console.log('refreshFavorite')
+    //   console.log('refreshFavorite')
     //   this.isFavorite = checkFavorite(this.body._id, this.ecomPassport)
     //   setTimeout(() => {        
     //     window.updateClientInfo();

@@ -679,7 +679,7 @@
     var parallaxie = function () {
         var $window = $(window);
         if ($(".parallaxie").length && $window.width() > 991) {
-            //console.log("zo");
+            console.log("zo");
             if ($window.width() > 768) {
                 $(".parallaxie").parallaxie({
                     speed: 0.55,

@@ -253,7 +253,7 @@ export default {
       }
       const fetching = ecomSearch.setPageSize(this.pageSize).fetch()
         .then(result => {
-          //console.log('Search results fetched', result)
+          console.log('Search results fetched', result)
           if (this.lastRequestId === requestId) {
             this.hasNetworkError = false
             if (!isPopularItems) {

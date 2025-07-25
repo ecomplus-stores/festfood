@@ -5,7 +5,7 @@
     if (opt.banners.length === 2) preview = 2;
     else if (opt.banners.length < 4) preview = opt.banners.length;
 
-    //console.log(opt)
+    console.log(opt)
     if(opt.grid_type == "Mosaico"){  
       const mosaicBanners = opt.banners.slice(0, 3);
 %>
@@ -179,7 +179,7 @@
 </section>
 <%
     }else{
-      //console.log('No title found for banners')
+      console.log('No title found for banners')
     %>
    <section class="">
       <div class="container">

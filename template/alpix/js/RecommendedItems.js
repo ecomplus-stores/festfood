@@ -113,7 +113,7 @@ export default {
   methods: {
     
     async toggleFavorite (itemId) {
-      //console.log('toggleFavorite', itemId)      
+      console.log('toggleFavorite', itemId)      
         this.isFavorite = await toggleFavorite(itemId, this.ecomPassport)              
         this.items = this.items.filter(item => item._id !== itemId)      
     },

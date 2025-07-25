@@ -206,7 +206,7 @@ export default {
       }
     },
     photoswipperLightboxInit(){
-      //console.log('photoswipperLightbox')
+      console.log('photoswipperLightbox')
       var section_zoom = function () {
           $(".tf-image-zoom").on("mouseover", function () {
               $(this).closest(".section-image-zoom").addClass("zoom-active");
@@ -518,7 +518,7 @@ export default {
           });
         }
       }
-      //console.log(this.isQuickview,'quick')
+      console.log(this.isQuickview,'quick')
       if(!this.isQuickview){
         window.addEventListener('resize', driftZoom);
         driftZoom();
