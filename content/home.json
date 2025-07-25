@@ -7,17 +7,17 @@
       "grid_type": "Mosaico",
       "banners": [
         {
-          "img": "/img/uploads/991-x-512.png",
+          "img": "/img/uploads/1070x553.svg",
           "bn_title": "Teste",
           "link": "https://festfood.netlify.app/w/vinho-tinto"
         },
         {
-          "img": "/img/uploads/293-x-231.png",
+          "img": "/img/uploads/400x266.svg",
           "bn_title": "Teste",
           "link": "https://festfood.netlify.app/w/vinho-branco"
         },
         {
-          "img": "/img/uploads/293-x-231.png",
+          "img": "/img/uploads/400x266.svg",
           "bn_title": "Teste",
           "link": "https://festfood.netlify.app/w/sb-malbec"
         }
@@ -72,33 +72,25 @@
       "sort": "sales"
     },
     {
-      "type": "banner-slider",
-      "autoplay": 0,
-      "full_width": false,
-      "slides": [
+      "type": "banners-grid",
+      "grid_type": "Grupo",
+      "banners": [
         {
-          "start": "",
-          "end": "",
-          "img": "/img/uploads/fes-45-banner-2-website-embalagens.jpg",
-          "link": "",
-          "alt": "309"
+          "img": "/img/uploads/485x200.svg",
+          "bn_title": ""
         },
         {
-          "start": "",
-          "end": "",
-          "img": "/img/uploads/cak-51-banner-nestle-profissional.jpg",
-          "link": "",
-          "alt": "315"
+          "img": "/img/uploads/485x200.svg",
+          "bn_title": ""
         },
         {
-          "start": "",
-          "end": "",
-          "img": "/img/uploads/fes-45-banner-website-embalagens.jpg",
-          "link": "https://www.festcakes.com.br/search?term=P%C3%A1scoa&utm_source=site&utm_medium=banner&utm_campaign=01-pascoa",
-          "alt": "300"
+          "img": "/img/uploads/485x200.svg",
+          "bn_title": ""
         }
+        
       ]
     },
+   
     {
       "type": "collection-shelf",
       "shuffle": false,
@@ -107,15 +99,20 @@
       "grid_type": "Comum"
     },
     {
-      "type": "banners-grid",
-      "grid_type": "Mosaico",
-      "banners": [
-        {
+      "type": "banner-slider",
+      "autoplay": 4000,
+      "full_width": true,
+      "slides": [
+              {
+          "start": "",
+          "end": "",
           "img": "/img/uploads/inserir-um-titulo.png",
-          "bn_title": "Teste"
+          "link": "",
+          "alt": ""
         }
       ]
     },
+
     {
       "bg_color": "#941635",
       "page": 1,

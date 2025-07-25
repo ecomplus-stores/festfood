@@ -5,7 +5,7 @@ const toggleFavorite = async (productId, ecomPassport = _ecomPassport) => {
   const search = new EcomSearch()
   
   if(customer.display_name){
-    console.log('logado')
+    //console.log('logado')
     // Usuário logado - código existente
     const favorites = customer.favorites || []
     const isFavorite = await checkFavorite(productId, ecomPassport)
@@ -26,7 +26,7 @@ const toggleFavorite = async (productId, ecomPassport = _ecomPassport) => {
 
     return !isFavorite
   } else {
-    console.log('não logado')
+    //console.log('não logado')
     // Usuário não logado - versão corrigida
     let localFavorites = localStorage.getItem(`apxLocalFavorites`)
     if(localFavorites){
@@ -37,14 +37,14 @@ const toggleFavorite = async (productId, ecomPassport = _ecomPassport) => {
 
     // Verifica se o produto já é favorito usando a lista atual
     const isFavorite = localFavorites.includes(productId)
-    console.log('isFavorite', isFavorite, localFavorites)
+    //console.log('isFavorite', isFavorite, localFavorites)
     if (!isFavorite) {
-      console.log('isFavorite1', isFavorite, localFavorites)
+      //console.log('isFavorite1', isFavorite, localFavorites)
       // Adiciona aos favoritos
       localFavorites.push(productId)
       window.messageBullet(`Adicionado aos favoritos`)
     } else {
-      console.log('isFavorite2', isFavorite, localFavorites)
+      //console.log('isFavorite2', isFavorite, localFavorites)
       // Remove dos favoritos
       const favIndex = localFavorites.indexOf(productId)
       localFavorites.splice(favIndex, 1)
@@ -56,24 +56,24 @@ const toggleFavorite = async (productId, ecomPassport = _ecomPassport) => {
     // Atualiza contagem
     search.setProductIds(localFavorites).fetch().then(result => {
       $(`.favorite-count`).text(result.hits.hits.length)
-      console.log('favorite-search', result.hits.hits.length)
+      //console.log('favorite-search', result.hits.hits.length)
       if(result.hits.hits.length == 0){          
         $(`.favorites__body`).html('<p class="m-4 text-center h5 font-small d-block">Ops... você não adicionou nenhum produto a sua lista de favoritos</p>');
       }
     })
-    console.log('isFavorite3', !isFavorite, localFavorites)
+    //console.log('isFavorite3', !isFavorite, localFavorites)
     return !isFavorite
   }
 }
 const checkFavorite = (productId, ecomPassport) => {
-  console.log('checkFavorite', productId)
+  //console.log('checkFavorite', productId)
   const customer = ecomPassport.getCustomer()
   if(customer.display_name){
     const { favorites } = ecomPassport.getCustomer()
     
     return favorites && favorites.includes(productId)
   }else{
-    ////console.log('b',productId)
+    //////console.log('b',productId)
 
     let localFavorites = localStorage.getItem(`apxLocalFavorites`)
     if(localFavorites == null){

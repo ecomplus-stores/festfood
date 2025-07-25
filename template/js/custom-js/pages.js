@@ -63,20 +63,20 @@ window.messageBullet = function(message) {
 //     if(client.display_name){
 //       const { favorites } = await EcomPassport.ecomPassport.getCustomer();  
 //       favoriteList = favorites  
-//       console.log('placeFavorites - logged in')
-//       console.log(favoriteList)
+//       //console.log('placeFavorites - logged in')
+//       //console.log(favoriteList)
 //     }else{
 //       let localFavorites = localStorage.getItem(`apxLocalFavorites`)
 //       if(localFavorites){
 //         localFavorites = JSON.parse(localFavorites)
 //         favoriteList = localFavorites
-//         console.log('placeFavorites - logged out')
+//         //console.log('placeFavorites - logged out')
 //       }
 //     }
-//     //console.log('favoriteList',favoriteList,favoriteList.length > 0)
+//     ////console.log('favoriteList',favoriteList,favoriteList.length > 0)
 //     if(favoriteList && favoriteList.length > 0){
 //       search.setProductIds(favoriteList).fetch().then(result => {
-//         console.log('favorite-search place',result)
+//         //console.log('favorite-search place',result)
 //         $(`.favorites__body`).empty()
 //         $.each(result.hits.hits, function(k,i){
 //           let item = i._source;        
@@ -97,7 +97,7 @@ window.messageBullet = function(message) {
     
     
 //   }catch(e){
-//     //console.log(e)
+//     ////console.log(e)
 //     $(`.favorites__body`).html('<p class="h5 d-block m-4 text-center">Ocorreu um erro ao carregar os favoritos :(</p>');
 //     $(`#favorites-toggle span`).text(`0`)
 //   }
@@ -108,10 +108,10 @@ window.messageBullet = function(message) {
 //     const localFavorites = JSON.parse(localStorage.getItem(`apxLocalFavorites`));
 //     const { favorites } = await EcomPassport.ecomPassport.getCustomer(); 
 //     const newFavorites = localFavorites.concat(favorites.filter(item => !localFavorites.includes(item)));
-//     ////console.log('newFavorites',newFavorites)
+//     //////console.log('newFavorites',newFavorites)
 //     EcomPassport.ecomPassport.requestApi('/me.json', 'patch', { favorites: newFavorites }).then(() => {
 //       localStorage.removeItem(`apxLocalFavorites`)
-//       console.log('favorite list synced')
+//       //console.log('favorite list synced')
 //     })
     
 
@@ -132,17 +132,32 @@ document.addEventListener("DOMContentLoaded", function() {
 
 async function updateClientInfo(){
 let client = await EcomPassport.ecomPassport.getCustomer();   
-  console.log('updateClientInfo',client)
+  //console.log('updateClientInfo',client)
   if(client.display_name){
     $('[data-client_name]').text(client.display_name);
     $('[data-favorite_count]').text(client.favorites.length || 0);
   }
-  console.log('client name',client)
+  //console.log('client name',client)
 }
 
 window.updateClientInfo = updateClientInfo;
 
+window.equalProductNameSize = function() {
+  const productNames = document.querySelectorAll('.card-product .name-product');
+  let maxHeight = 0;
+  //console.log('equalProductNameSize', productNames.length);
+  productNames.forEach(name => {
+    const height = name.offsetHeight;
+    if (height > maxHeight) {
+      maxHeight = height;
+    }
+  });
 
+  if (maxHeight > 0) {
+    document.documentElement.style.setProperty('--productNameHeight', `${maxHeight}px`);
+  }
+  //console.log('equalProductNameSize', maxHeight);
+};
 
 
 $('body').on('click','#favorites-quickview button[data-product-id]', function(){

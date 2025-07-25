@@ -141,7 +141,7 @@
       </div>
     </template>
   
-    <div v-if="discount > 0" class="box-infor-detail">
+    <div v-if="body.specs && body.specs.find( el => el.grid == 'promocao')" class="box-infor-detail">
       <div class="product-progress-sale">
         <div class="progress-sold progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
           <div

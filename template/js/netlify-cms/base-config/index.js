@@ -30,7 +30,7 @@ export default options => {
       hint: '',
       widget: 'select',
       default: 'Comum',
-      options: ['Comum', 'Mosaico']
+      options: ['Comum', 'Mosaico','Grupo']
     }
   )
   const collectionShelf = sections.find(el => el.name === 'collection-shelf')
