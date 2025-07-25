@@ -1,11 +1,8 @@
 {
   "categories_list": {
     "featured": [
-      "/p/mercearia?Mercearia",
-      "/p/sb-temperos-e-condimentos?Temperos e Condimentos",
-      "/p/sb-ingredientes-mercearia?Ingredientes Mercearia"
     ],
-    "random": 0,
+    "random": 9,
     "full_width": true
   },
   "menu_all_departments": false,
