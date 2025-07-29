@@ -5,19 +5,13 @@
   "menu_color": "#661389",
   "categories": [
     {
-      "title": "Doces e Sobremesas"
+      "title": "Mercearia"
     },
     {
-      "title": "Temperos e Condimentos"
+      "title": "Embalagens e Descartáveis"
     },
     {
-      "title": "Ingredientes Mercearia"
-    },
-    {
-      "title": "Frutas secas e grãos"
-    },
-    {
-      "title": "Conserva"
+      "title": "Utensílios"
     }
   ]
 }
