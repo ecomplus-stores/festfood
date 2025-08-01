@@ -29,35 +29,43 @@
       "banners": [
         {
           "img": "/img/uploads/food_2025_jul_bnr_categorias_web_1.jpg",
-          "bn_title": ""
+          "bn_title": "",
+          "link": "https://festfood.com.br/f/mercearia"
         },
         {
           "img": "/img/uploads/food_2025_jul_bnr_categorias_web_2.jpg",
-          "bn_title": ""
+          "bn_title": "",
+          "link": "https://festfood.com.br/f/embalagens-e-descartaveis"
         },
         {
           "img": "/img/uploads/food_2025_jul_bnr_categorias_web_3.jpg",
-          "bn_title": ""
+          "bn_title": "",
+          "link": "https://festfood.com.br/f/utensilios"
         },
         {
           "img": "/img/uploads/food_2025_jul_bnr_categorias_web_4.jpg",
-          "bn_title": ""
+          "bn_title": "",
+          "link": "https://festfood.com.br/f/confeitaria"
         },
         {
           "img": "/img/uploads/food_2025_jul_bnr_categorias_web_5.jpg",
-          "bn_title": ""
+          "bn_title": "",
+          "link": "https://festfood.com.br/f/panificacao"
         },
         {
           "img": "/img/uploads/food_2025_jul_bnr_categorias_web_6.jpg",
-          "bn_title": ""
+          "bn_title": "",
+          "link": "https://festfood.com.br/f/chocolates"
         },
         {
           "img": "/img/uploads/food_2025_jul_bnr_categorias_web_7.jpg",
-          "bn_title": ""
+          "bn_title": "",
+          "link": "https://festfood.com.br/f/culinaria"
         },
         {
           "img": "/img/uploads/food_2025_jul_bnr_categorias_web_8.jpg",
-          "bn_title": ""
+          "bn_title": "",
+          "link": "https://festfood.com.br/f/bomboniere"
         }
       ],
       "title": "Top Categorias do Mês"
