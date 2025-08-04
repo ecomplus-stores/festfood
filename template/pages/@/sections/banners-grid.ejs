@@ -96,7 +96,7 @@
                     <div class="swiper-wrapper">
                         <% opt.banners.forEach((banner, idx) => { %>
                             <div class="swiper-slide">
-                                <a href="<%= banner.link || '#' %>" class="image wow fadeInLeft" data-wow-delay="0.<%= idx %>s">
+                                <a href="<%= banner.link || '#' %>" class="image wow fadeInLeft overflow-hidden radius-8" data-wow-delay="0.<%= idx %>s">
                                     <img src="<%= _.assetsPrefix || '' %><%= banner.img %>" 
                                          data-src="<%= _.assetsPrefix || '' %><%= banner.img %>"
                                          alt="<%= banner.alt || banner.title || 'product' %>" 
@@ -141,7 +141,7 @@
             <div class="swiper-wrapper">
                 <% opt.banners.forEach((banner, index) => { %>
                     <div class="swiper-slide">
-                        <div class="wg-cls hover-img type-abs">
+                        <div class="wg-cls hover-img type-abs overflow-hidden radius-8">
                             <% if (banner.img) { %>
                                 <a href="<%= banner.link || '#' %>" class="img-style d-block">
                                     <img src="<%= _.assetsPrefix || '' %><%= banner.img %>" 

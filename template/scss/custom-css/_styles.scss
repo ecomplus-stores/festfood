@@ -1517,7 +1517,7 @@ a:hover{text-decoration: none;}
   
 }
 
-
+#cart-quickview .text-white,
 body .popup-shopping-cart .box-btn .text-white{
   color: #fff!important;  
 }
@@ -1638,5 +1638,44 @@ header #filterShop2{display:none!important}
 .card-product{
   .name-product{
     height: var(--productNameHeight);
+  }
+}
+@media(min-width:990px){
+  .main-nav-menu{
+    .menu-list{
+      // Se houver mais de 10 itens filhos, quebra em colunas
+      & > li {
+        white-space: nowrap;
+      }
+      &:has(> li:nth-child(11)) {
+        column-count: 2;
+        column-gap: 2rem;
+      }
+      &:has(> li:nth-child(21)) {
+        column-count: 3;
+        
+      }
+      &:has(> li:nth-child(31)) {
+        column-count: 4;
+        
+      }
+    }
+    > .nav-list > li:nth-child(n+5) {
+      .sub-menu-container.mega-menu {
+        left: auto;
+        right: 0;
+      }
+    }
+  }
+}
+
+@media(max-width:990px){
+  .tf-shop-control{
+    position: relative;
+    bottom: auto;
+    left: 0;
+  }
+  .tf-shop-control .tf-btn-filter{
+    box-shadow: 0px 0px 0px;
   }
 }
