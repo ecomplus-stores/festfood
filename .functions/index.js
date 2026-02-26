@@ -102,6 +102,7 @@ globalThis.ecomClientAxiosMidd = async (config) => {
 }
 
 exports.ssr = functions.https.onRequest((req, res) => {
+  /* chChar redirect - disabled temporarily
   const chChar = 'f'
   if (
     req.path.length > 1
@@ -130,5 +131,6 @@ exports.ssr = functions.https.onRequest((req, res) => {
       return
     }
   }
+  */
   ssr(req, res);
 });
